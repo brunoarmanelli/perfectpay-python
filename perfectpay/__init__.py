@@ -9,7 +9,11 @@ class PerfectPay:
 			page=None):
 
 		method_url = 'https://app.perfectpay.com.br/api/v1/sales/get'
-		headers = {'Authorization': 'Bearer ' + self.token}
+		headers = {
+			'Authorization': 'Bearer ' + self.token,
+			'Content-Type': 'application/json',
+			'User-Agent': 'WhoBotsRuntime/1.0'
+		}
 		payload = {}
 		
 		if transaction_token:
